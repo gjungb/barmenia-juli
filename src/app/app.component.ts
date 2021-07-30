@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Book} from "./book";
 
 @Component({
   selector: 'barm-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'barmenia-juli';
+  /**
+   * Der Titel
+   */
+  title = 'barmenia-julius';
+
+  handleSelectBook(book: Book) {
+    debugger;
+  }
 }
