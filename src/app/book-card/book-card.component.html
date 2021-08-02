@@ -1,9 +1,15 @@
 <p>book-card works!</p>
 
-<h3 [style.color]="color">{{ book.title }}</h3>
+<h3 [style.color]="color">{{ book.title | uppercase }}</h3>
 
-<h4 [ngStyle]="styles">{{ book.author }}</h4>
+<h4 [ngStyle]="styles">{{ book.author | slice: 0: 3 }}</h4>
+
+<p>
+  {{ book.isbn | barmIsbn }}
+</p>
 
 <p (click)="handleDetailClick($event)">My name is Ishmael...</p>
 
 <p>{{ book.numPages }}</p>
+
+<pre><code>{{ book | json }}</code></pre>

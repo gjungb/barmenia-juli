@@ -3,6 +3,11 @@
  */
 export interface Book {
   /**
+   * Die ISBN
+   * @link
+   */
+  isbn: string;
+  /**
    * Der Titel
    */
   title: string;
@@ -13,7 +18,7 @@ export interface Book {
   /**
    * Die Anzahl der Seiten
    */
-  numPages: number;
+  numPages?: number;
   /**
    * Die Beschreibung
    */

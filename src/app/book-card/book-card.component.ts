@@ -11,6 +11,9 @@ export class BookCardComponent implements OnInit {
   @Input()
   author = '';
 
+  /**
+   * Das anzuzeigende Buch
+   */
   @Input()
   book!: Book;
 

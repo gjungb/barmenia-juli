@@ -13,6 +13,5 @@ export class AppComponent {
   title = 'barmenia-julius';
 
   handleSelectBook(book: Book) {
-    debugger;
   }
 }
