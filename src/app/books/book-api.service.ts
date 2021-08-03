@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Book} from "../book";
+import {Observable, of} from "rxjs";
+import {delay, tap} from "rxjs/operators";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +30,20 @@ export class BookApiService {
     }
   ];
 
-  constructor() {
+  constructor(private readonly client: HttpClient) {
   }
 
   /**
    * Liefert eine Liste aller bekannten Bücher
    */
-  getAll(): Promise<Book[]> {
-    return Promise.resolve(this.books);
+  getAll(): Observable<Book[]> {
+    const resp$ = this.client.get<Book[]>('http://localhost:4730/books', {
+
+    });
+
+    return resp$.pipe(
+      delay(2000),
+      tap(value => console.log(value)),
+    );
   }
 }

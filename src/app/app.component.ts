@@ -11,6 +11,7 @@ export class AppComponent {
    * Der Titel
    */
   title = 'barmenia-julius';
+  visible = true;
 
   handleSelectBook(book: Book) {
   }

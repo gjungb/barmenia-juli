@@ -1,7 +1,19 @@
 <p>book-list works!</p>
 
-<div *ngFor="let thing of books">
-  <!-- -->
-  <barm-book-card [book]="thing"></barm-book-card>
+<p>
+  {{ timer$ | async }}
+</p>
+
+<div *ngIf="books$ | async as things; else loader">
+  <div *ngFor="let thing of things">
+    <!-- -->
+    <barm-book-card [book]="thing"></barm-book-card>
+  </div>
 </div>
+
+<ng-template #loader>
+  <p>
+    Bin am Laden...
+  </p>
+</ng-template>
 

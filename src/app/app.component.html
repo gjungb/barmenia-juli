@@ -1,3 +1,7 @@
 <h1>{{ title }}</h1>
 
-<barm-book-list></barm-book-list>
+<barm-book-new></barm-book-new>
+
+<button (click)="visible = !visible">Toggle</button>
+
+<barm-book-list *ngIf="visible"></barm-book-list>
