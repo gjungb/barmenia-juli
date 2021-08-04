@@ -1,0 +1,12 @@
+<p>book-detail works!</p>
+
+<!-- make use of async pipe and *ngIf -->
+<ng-container *ngIf="book$ | async as thing; else loader">
+  <barm-book-card [book]="thing"></barm-book-card>
+</ng-container>
+
+<ng-template #loader>
+  <p>
+    Bin am Laden...
+  </p>
+</ng-template>

@@ -1,1 +1,9 @@
 <p>book-new works!</p>
+
+<form [formGroup]="form" (ngSubmit)="handleSubmit(form.value)">
+  <input type="text" [formControlName]="'title'">
+
+  <input type="text" [formControl]="isbn">
+
+  <button type="submit" [disabled]="form.invalid">Absenden</button>
+</form>

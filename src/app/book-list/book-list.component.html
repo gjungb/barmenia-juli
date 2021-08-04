@@ -7,6 +7,7 @@
 <div *ngIf="books$ | async as things; else loader">
   <div *ngFor="let thing of things">
     <!-- -->
+    <a [routerLink]="[ thing.isbn ]">Details zu {{ thing.isbn }}</a>
     <barm-book-card [book]="thing"></barm-book-card>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BarmIsbnPipe } from './shared/barm-isbn.pipe';
 import { BookNewComponent } from './book/book-new/book-new.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     BookCardComponent,
     BookListComponent,
     BarmIsbnPipe,
-    BookNewComponent
+    BookNewComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'API_URL',
+      useValue: 'http://localhost:4730'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
